@@ -3,7 +3,6 @@ import './App.css';
 
 const styles={
     tarjeta:{
-        // backgroundColor:'#3d8278',
         boxShadow: '0 5px 10px rgba(0, 0, 0, 0.5)',
         width: '200px',
         height: 'auto',
