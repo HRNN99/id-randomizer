@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Card from './card.js';
+import faker from 'faker'
+import { name } from 'faker/locale/zh_TW';
 
 function App() {
+  const [name, setName] = useState(`${faker.name.firstName()} ${faker.name.lastName()}`)
+
+  const randomize = () =>{
+    setName(`${faker.name.firstName()} ${faker.name.lastName()}`)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <button className="button" onClick={randomize}>Change person</button>
+      </div>
+      <Card 
+      avatar={faker.image.avatar()}
+      name={`${faker.name.firstName()} ${faker.name.lastName()}`}
+      titulo={faker.name.jobTitle()}
+      />
     </div>
   );
 }
